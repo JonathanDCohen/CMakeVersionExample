@@ -1,4 +1,13 @@
 cmake_minimum_required(VERSION 3.5)
-project(lib)
-add_library(lib STATIC lib.h lib.cc)
-target_compile_features(lib PRIVATE cxx_std_11)
+
+project(version)
+
+message(STATUS "Compiler: ${CMAKE_CXX_COMPILER_ID} ${CMAKE_CXX_COMPILER_VERSION}")
+message(STATUS "Standard: ${CMAKE_CXX_STANDARD}")
+
+add_subdirectory(lib)
+
+add_executable(version version.cc)
+target_link_libraries(version lib)
+
+add_executable(version98 version98.cc)
