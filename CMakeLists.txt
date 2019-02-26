@@ -9,3 +9,7 @@ add_subdirectory(lib)
 
 add_executable(version version.cc)
 target_link_libraries(version lib)
+
+add_executable(version_with_requirements version.cc)
+target_link_libraries(version_with_requirements lib)
+target_compile_features(version_with_requirements PUBLIC cxx_std_11)

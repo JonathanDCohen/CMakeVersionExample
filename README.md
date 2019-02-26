@@ -1,5 +1,7 @@
 # CMakeVersionExample
-Example experimenting for https://github.com/abseil/abseil-cpp/issues/259.  Specifically, outputs `CMAKE_CXX_STANDARD`, the client C++ standard level, and the lib C++ standard level for when the lib has a private usage requirement of `cxx_std_level` of `11`.
+Example experimenting for https://github.com/abseil/abseil-cpp/issues/259.  Specifically, outputs `CMAKE_CXX_STANDARD`, the client C++ standard level, and the lib C++ standard level for when the lib has a private usage requirement of `cxx_std_11`.
+
+There are two binaries.  `version` uses whatever CMake does behind the scenes to determine level, either the compiler default or CMAKE_CXX_STANDARD.  `version_with_requirements` sets a compile feature of `cxx_std_11`.
 
 To run
 ```bash
@@ -33,6 +35,11 @@ $ cmake -DCMAKE_CXX_STANDARD=14 .. && cmake --build . --target version && ./vers
 -- CMAKE_CXX_STANDARD: 14
 client: 201402
 lib: 201402
+
+$ cmake .. && cmake --build . --target version_with_requirements && ./version_with_requirements
+-- CMAKE_CXX_STANDARD:
+client: 201103
+lib: 201103
 ```
 
 # GCC 7.3.0 (defaults to C++14)
@@ -58,3 +65,5 @@ $ cmake .. -DCMAKE_CXX_STANDARD=14 && cmake --build . --target version && ./vers
 client: 201402
 lib: 201402
 ```
+
+`version
