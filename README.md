@@ -64,6 +64,9 @@ $ cmake .. -DCMAKE_CXX_STANDARD=14 && cmake --build . --target version && ./vers
 -- CMAKE_CXX_STANDARD: 14
 client: 201402
 lib: 201402
-```
 
-`version
+$ cmake .. && cmake --build . --target version_with_requirements && ./version_with_requirements
+-- CMAKE_CXX_STANDARD:
+client: 201103
+lib: 201103
+```
