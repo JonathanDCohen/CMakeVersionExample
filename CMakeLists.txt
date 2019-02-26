@@ -9,5 +9,3 @@ add_subdirectory(lib)
 
 add_executable(version version.cc)
 target_link_libraries(version lib)
-
-add_executable(version98 version98.cc)
