@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.5)
 project(version)
 
 message(STATUS "Compiler: ${CMAKE_CXX_COMPILER_ID} ${CMAKE_CXX_COMPILER_VERSION}")
-message(STATUS "Standard: ${CMAKE_CXX_STANDARD}")
+message(STATUS "CMAKE_CXX_STANDARD: ${CMAKE_CXX_STANDARD}")
 
 add_subdirectory(lib)
 
